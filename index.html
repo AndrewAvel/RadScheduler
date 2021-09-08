@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app="radschedulerApp">
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>RadScheduler - Login</title>
+        <link rel="shortcut icon" href="./img/x-ray.png" type="image/x-icon">
+
+        <script src="./lib/angular.min.js"></script>
+        <script src="./lib/angular-route.min.js"></script>
+
+        <script src="./app.module.js"></script>
+        <script src="./app.config.js"></script>
+
+        <script src="./components/login/login.module.js"></script>
+        <script src="./components/login/login.component.js"></script>
+
+        <script src="./components/doctor/doctor.module.js"></script>
+        <script src="./components/doctor/doctor.component.js"></script>
+
+        <script src="./components/radiologist/radiologist.module.js"></script>
+        <script src="./components/radiologist/radiologist.component.js"></script>
+
+        <script src="./components/order-exam/orderExam.module.js"></script>
+        <script src="./components/order-exam/orderExam.component.js"></script>
+
+        <script src="./components/logout-button/logout-button.module.js"></script>
+        <script src="./components/logout-button/logout-button.component.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet"> 
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+
+
+    <body>
+
+        <header>
+            <img id="logo" src="./img/x-ray.png" alt="RadScheduler logo image">
+            <h1 id="logo-title">RadScheduler</h1>
+            <logout-button></logout-button>
+        </header>
+
+        <main ng-view></main>
+
+        <footer>
+
+            <div class="footer-item" id="university-container">
+                <h3>University of Pireus</h3>
+                <h4>Department of Digital Systems</h4>
+            </div>
+
+            <div class="footer-item" id="course-container">
+                <h5>eHealth Services - 2021</h4>
+            </div>
+
+            <div class="footer-item" id="credits-container">
+                <div id="flaticon">
+                    Icons made by
+                    <a target="_blank" href="https://www.flaticon.com/authors/icon-pond" title="Icon Pond">
+                        Icon Pond
+                    </a>
+                    from
+                    <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">
+                        www.flaticon.com
+                    </a>
+                </div>
+            </div>
+
+        </footer>
+
+    </body>
+
+</html>

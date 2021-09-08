@@ -1,0 +1,100 @@
+<h2 class="greeting">Hello, doctor</h2>
+
+<p class="message" id="order-prompt">
+    fill in the information below to submit an order for radiological examinations
+</p>
+
+<form id="doctor-form" ng-submit="$ctrl.schedule()">
+
+    <div class="inputs-container" id="order-inputs-container">
+
+        <div class="inputs-container" id="patient-inputs-container">
+
+            <em>patient information</em>
+
+            <div class="input-container" id="firstName-container">
+                <label for="firstName"><span class="input-prompt">First Name</span></label>
+                <input type="text" name="firstName" id="firstName" required ng-model="$ctrl.firstName">
+            </div>
+
+            <div class="input-container" id="lastName-container">
+                <label for="lastName"><span class="input-prompt">Last Name</span></label>
+                <input type="text" name="lastName" id="lastName" required ng-model="$ctrl.lastName">
+            </div>
+
+            <div class="input-container" id="fatherName-container">
+                <label for="fatherName"><span class="input-prompt">Father's Name</span></label>
+                <input type="text" name="fatherName" id="fatherName" required ng-model="$ctrl.fatherName">
+            </div>
+
+            <div class="input-container" id="motherName-container">
+                <label for="motherName"><span class="input-prompt">Mother's Name</span></label>
+                <input type="text" name="motherName" id="motherName" required ng-model="$ctrl.motherName">
+            </div>
+
+            <div class="input-container" id="motherName-container">
+                <label for="address"><span class="input-prompt">Address</span></label>
+                <input type="text" name="address" id="address" required ng-model="$ctrl.address">
+            </div>
+
+            <div class="input-container" id="ssn-container">
+                <label for="ssn"><span class="input-prompt">SSN</span></label>
+                <input type="text" name="ssn" id="ssn" required ng-model="$ctrl.ssn">
+            </div>
+
+        </div>
+
+        <div class=inputs-container>
+
+            <em>order details</em>
+
+            <div class="input-checkbox-container" ng-repeat="exam in $ctrl.exams">
+                <label for="ssn" class="checkbox-label"><span class="input-prompt">{{exam.name}}</span></label>
+                <input type="checkbox" class="input-checkbox" name="{{exam.name}}" id="{{exam.name}}">
+            </div>
+
+            <div class="textarea-container">
+                <label for="">reason</label>
+                <textarea name="" id="" cols="30" rows="4" ng-model="$ctrl.reason" required></textarea>
+            </div>
+
+            <div class="input-container">
+                <label for="">recommended date</label>
+                <input type="date" name="recommendedDate" id="recommendedDate" ng-model="$ctrl.recommendedDate" required>
+            </div>
+
+            <div class="select-container">
+                <label for="priority">priority</label>
+                <select name="priority" id="priority" ng-model="$ctrl.priority" required>
+                    <option value="routine">routine</option>
+                    <option value="urgent">urgent</option>
+                </select>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="button-container">
+        <button class="submit-button" type="submit">submit</button>
+    </div>
+    
+</form>
+
+
+<div class="result detail-item " ng-repeat="detail in $ctrl.results">
+    <p>
+        Your appointment with radiologist
+        <b>{{detail.radiologist.username}}</b>
+    </p>
+
+    <p>for the <b>{{detail.exam_name}}</b> examination</p>
+
+    <p>
+        <p>starts at <b>{{detail.start_time}}</b> and</p>
+        
+        <p>ends at <b>{{detail.end_time}}</b></p>
+    </p>
+    
+</div>
+
