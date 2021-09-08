@@ -27,7 +27,7 @@ angular.module('login').component('login', {
 
                         // window.location = '#!doctor';
                         $location.path('/doctor');
-                    } else if (response.data['category'] === 'radiology') {
+                    } else if (response.data['category'] === 'radiologist') {
                         /**
                          * redirect to radiologist ...
                          * window.location='#pagename';
