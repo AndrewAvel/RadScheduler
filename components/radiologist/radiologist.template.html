@@ -1,6 +1,6 @@
 <h1 class="greeting">Hello, <span>{{$ctrl.radiologist.username}}</span></h1>
 
-<p class="message">your appointments can be seen below</p>
+<p class="message" id="radiologist-message">your appointments can be seen below</p>
 
 <div class="list">
     <a class="list-item" href="#!/orderExams/{{order_exam.id}}" ng-repeat="order_exam in $ctrl.order_exams">

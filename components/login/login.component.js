@@ -27,12 +27,17 @@ angular.module('login').component('login', {
 
                         // window.location = '#!doctor';
                         $location.path('/doctor');
-                    } else {
+                    } else if (response.data['category'] === 'radiology') {
                         /**
                          * redirect to radiologist ...
                          * window.location='#pagename';
                          */
                          $location.path('/radiologist');
+                    } else {
+                        let errorMessage = document.getElementById('error-message');
+
+                        errorMessage.innerHTML = 'wrong username or password.';
+                        errorMessage.style = 'color: crimson';
                     }
                 });
         }
